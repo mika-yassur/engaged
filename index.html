@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Firebase Poll</title>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="left">Columbia GSAPP</div>
+    <div class="center">
+      Computational Design Workflows<br>
+      <span>Firebase Poll Tutorial</span>
+    </div>
+    <div class="right">About</div>
+  </header>
+
+  <main>
+    <p>Click a button to vote. The results update in real-time thanks to Firebase!</p>
+
+    <div class="poll-container">
+      <!-- Poll question -->
+      <div class="poll-question">
+        <h3>Are you where you need to be?</h3>
+      </div>
+
+      <!-- Vote buttons -->
+      <div class="vote-buttons">
+        <button class="vote-btn vote-yes" id="vote-yes">
+          <span class="vote-text">Yes</span>
+          <span class="vote-count" id="yes-count">0</span>
+        </button>
+
+        <button class="vote-btn vote-no" id="vote-no">
+          <span class="vote-text">No</span>
+          <span class="vote-count" id="no-count">0</span>
+        </button>
+      </div>
+
+      <!-- Follow-up question (hidden initially) -->
+      <div id="follow-up-container" style="display: none; margin-top: 20px;">
+        <label for="follow-up-input">How come?</label><br>
+        <input type="text" id="follow-up-input" placeholder="Type your answer here..." style="width: 100%; max-width: 400px; padding: 8px;"><br>
+        <button id="submit-follow-up" style="margin-top: 10px;">Submit</button>
+      </div>
+
+      <!-- Total votes display -->
+      <div class="total-votes">
+        <p>Total votes: <span id="total-votes">0</span></p>
+      </div>
+    </div>
+
+    <!-- Connection status -->
+    <div class="section-title">Connection Status</div>
+    <div id="connection-status" class="status-display">
+      <p>Connecting to Firebase...</p>
+    </div>
+  </main>
+
+  <!-- JavaScript file -->
+  <script src="poll-app.js"></script>
+</body>
+</html>
